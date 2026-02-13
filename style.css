@@ -1,0 +1,382 @@
+/* --- 変数定義 --- */
+:root {
+    --main-brown: #594e46;   /* 文字色：落ち着いた焦げ茶 */
+    --bg-beige: #e8ded2;     /* 背景色：少し濃いめの優しいベージュ */
+    --bg-placeholder: #dcd0c0; /* 画像がない場所の色 */
+    --accent-gold: #c5a059;  /* アクセント */
+    --font-mincho: 'Shippori Mincho', serif;
+}
+
+/* --- ベース設定 --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-mincho);
+    color: var(--main-brown);
+    background-color: var(--bg-beige);
+    line-height: 2.2;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-brown);
+    transition: opacity 0.5s;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+/* --- ヘッダー --- */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px; /* 画像に合わせて少し調整 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 1000;
+    /* 背景が透過だと文字が見にくい場合、必要に応じて以下を有効化 */
+    /* background: rgba(232, 222, 210, 0.8); */
+}
+
+/* ロゴ画像の調整 */
+.logo {
+    margin: 0;
+    line-height: 1; /* 高さがずれないように */
+}
+
+.logo img {
+    height: 60px; /* ロゴの高さ（お好みで調整してください） */
+    width: auto;
+    display: block;
+}
+
+/* --- ハンバーガーボタン --- */
+.hamburger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: var(--main-brown);
+    transition: 0.4s ease;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 10px; }
+.hamburger span:nth-child(3) { top: 20px; }
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+    background: #fff;
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 10px;
+    background: #fff;
+}
+
+/* --- オーバーレイメニュー --- */
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(89, 78, 70, 0.98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    z-index: 900;
+}
+
+.overlay-menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.overlay-menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.overlay-menu li {
+    margin: 30px 0;
+}
+
+.overlay-menu a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: var(--font-mincho);
+    letter-spacing: 0.2em;
+}
+
+/* --- メインビジュアル --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--bg-placeholder);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.hero-text-vertical {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--main-brown);
+}
+
+/* --- コンセプトエリア --- */
+.concept {
+    padding: 180px 0;
+    background-color: var(--bg-beige);
+}
+
+.concept-inner {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 80px;
+}
+
+.vertical-title {
+    writing-mode: vertical-rl;
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 0.3em;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    font-size: 0.95rem;
+    line-height: 2.8;
+}
+
+/* --- サブページ共通 --- */
+.page-header {
+    padding: 150px 0 80px;
+    text-align: center;
+}
+.page-title {
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 20px;
+}
+.page-subtitle {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+}
+.page-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 150px;
+}
+
+/* --- Brandページ --- */
+.brand-section {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 100px;
+    align-items: flex-start;
+}
+.brand-text {
+    writing-mode: vertical-rl;
+    line-height: 2.2;
+    font-size: 0.95rem;
+}
+.brand-image {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    background-color: var(--bg-placeholder);
+}
+
+/* --- Lineupページ --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 60px;
+    margin-top: 50px;
+}
+.product-item {
+    text-align: center;
+}
+.product-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background-color: var(--bg-placeholder);
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+.product-name {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: block;
+}
+.product-price {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* --- Shopページ --- */
+.shop-name-area { text-align: center; margin-bottom: 60px; }
+.shop-name-area h3 { font-size: 1.8rem; margin: 0; }
+.shop-name-sub { font-size: 0.9rem; opacity: 0.7; display: block; margin-top: 15px; }
+
+.shop-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+}
+.shop-info-table th, .shop-info-table td {
+    padding: 25px;
+    border-bottom: 1px solid rgba(89, 78, 70, 0.2);
+    text-align: left;
+    vertical-align: top;
+}
+.shop-info-table th { width: 30%; letter-spacing: 0.1em; }
+.map-link { display: inline-block; margin-top: 10px; font-size: 0.9rem; border-bottom: 1px solid var(--main-brown); }
+
+.sns-links { display: flex; justify-content: center; gap: 30px; margin-top: 60px; }
+.sns-btn {
+    display: flex; align-items: center; gap: 10px; padding: 12px 30px;
+    border: 1px solid var(--main-brown); color: var(--main-brown);
+    font-family: sans-serif; letter-spacing: 0.05em; font-size: 0.9rem; transition: 0.3s;
+}
+.sns-btn:hover { background-color: var(--main-brown); color: #fff; cursor: pointer; }
+
+/* --- Newsページ --- */
+.news-list { list-style: none; padding: 0; }
+.news-item { border-bottom: 1px solid rgba(89, 78, 70, 0.2); padding: 25px 0; }
+.news-date { display: block; font-size: 0.8rem; margin-bottom: 5px; opacity: 0.7; font-family: sans-serif; }
+.news-title { font-size: 1rem; display: block; }
+
+/* --- index.html用 追加スタイル（ロゴ・QR） --- */
+
+/* メインビジュアル中央の筆文字ロゴ */
+.hero-center-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ど真ん中に配置 */
+    width: 80%; /* スマホでは幅いっぱいに */
+    max-width: 500px; /* PCでも大きくなりすぎないように */
+    z-index: 10;
+}
+
+.hero-center-logo img {
+    width: 100%;
+    height: auto;
+    /* ★重要：画像の黒い背景を透明にして、白い文字だけ残す魔法のコード */
+    mix-blend-mode: screen; 
+    opacity: 0.9;
+}
+
+/* もし背景が明るすぎて白文字が見にくい場合の影 */
+.hero-image img {
+    filter: brightness(0.6); /* 背景写真を少し暗くする */
+    transition: 0.5s;
+}
+
+
+/* 下部のQRコードエリア */
+.sns-area {
+    background-color: #1a1a1a; /* 画像に合わせて背景を黒に */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.sns-inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.qr-image {
+    width: 100%;
+    max-width: 300px; /* 画像のサイズ調整 */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* --- index.html用 追加スタイル（修正版） --- */
+
+/* メインビジュアル中央の筆文字ロゴ */
+.hero-center-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    z-index: 100; /* 数値を大きくして確実に手前に表示 */
+    pointer-events: none; /* ロゴがクリックの邪魔をしないように */
+}
+
+.hero-center-logo img {
+    width: 100%;
+    height: auto;
+    /* 背景を透明にする設定 */
+    mix-blend-mode: screen; 
+    opacity: 0.95;
+    /* ★追加：背景が明るくても文字が見えるように影をつける */
+    filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.8));
+}
+
+/* 下部のQRコードエリア */
+.sns-area {
+    background-color: #1a1a1a;
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: -1px; /* 隙間防止 */
+}
+
+.sns-inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.qr-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
