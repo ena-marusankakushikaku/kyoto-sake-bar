@@ -8,13 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="home">
 
     <header class="site-header">
         <h1 class="logo">
             <a href="index.html">
-                <img src="logo.png" alt="日本酒bar ◯△□">
+                <img src="logo.png" alt="日本酒bar ◯△□" onerror="this.style.display='none'; this.parentNode.innerText='◯△□'">
             </a>
         </h1>
         <div class="hamburger" id="hamburger-btn">
@@ -36,8 +37,8 @@
         <div class="hero-image">
             <img src="main.jpg" alt="店内の様子" onerror="this.style.display='none'">
         </div>
-        <div class="hero-text-vertical">
-            <p>京都、路地裏。<br>まる、さんかく、しかく。</p>
+        <div class="hero-center-logo">
+            <img src="top-logo.png" alt="日本酒bar ◯△□ 筆文字ロゴ">
         </div>
     </section>
 
@@ -51,6 +52,21 @@
                 あなただけの一杯に出会う。<br>
                 今宵、ふらりと立ち寄りませんか。
             </p>
+        </div>
+    </section>
+
+    <section class="sns-area">
+        <div class="sns-inner">
+            <img src="qr-code.png" alt="Instagram & 各種サイトQR" class="qr-image">
+            
+            <div class="top-sns-links">
+                <a href="https://www.instagram.com/" target="_blank" class="top-sns-btn instagram">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" class="top-sns-btn facebook">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+            </div>
         </div>
     </section>
 
