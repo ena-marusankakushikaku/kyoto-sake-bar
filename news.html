@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News | 日本酒 ◯△□ 風サイト</title>
+    <title>News | 日本酒bar ○△□</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header class="site-header">
-        <h1 class="logo"><a href="index.html">◯△□</a></h1>
+        <h1 class="logo">
+            <a href="index.html">
+                <img src="image_a61855.png" alt="日本酒bar ◯△□" onerror="this.style.display='none'; this.parentNode.innerText='◯△□'">
+            </a>
+        </h1>
         <div class="hamburger" id="hamburger-btn"><span></span><span></span><span></span></div>
     </header>
 
     <nav class="overlay-menu" id="overlay-menu">
         <ul>
             <li><a href="index.html">Top</a></li>
-            <li><a href="brand.html">Brand</a></li>
-            <li><a href="lineup.html">Lineup</a></li>
-            <li><a href="shop.html">Shop</a></li>
+            <li><a href="brand.html">Concept</a></li>
+            <li><a href="lineup.html">Menu</a></li>
+            <li><a href="shop.html">Access</a></li>
             <li><a href="news.html">News</a></li>
-            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -30,26 +34,59 @@
     </div>
 
     <div class="page-content">
-        <ul class="news-list">
-            <li class="news-item">
-                <a href="#">
-                    <span class="news-date">2026.02.13</span>
-                    <span class="news-title">春の限定酒「桜」の販売を開始いたしました。</span>
-                </a>
-            </li>
-            <li class="news-item">
-                <a href="#">
-                    <span class="news-date">2026.01.20</span>
-                    <span class="news-title">店舗改装による休業のお知らせ。</span>
-                </a>
-            </li>
-            <li class="news-item">
-                <a href="#">
-                    <span class="news-date">2025.12.30</span>
-                    <span class="news-title">年末年始の営業時間について。</span>
-                </a>
-            </li>
-        </ul>
+        
+        <article class="news-article">
+            <div class="news-meta">
+                <span class="news-date">2026.02.19</span>
+                <span class="news-cat">入荷情報</span>
+            </div>
+            <h3 class="news-title-full">春の限定酒「桜」の販売を開始いたしました。</h3>
+            <div class="news-body">
+いつもご利用ありがとうございます。
+今年も待ちに待った春の限定酒が入荷いたしました。
+
+華やかな香りと、春の訪れを感じさせる淡いピンク色のラベルが特徴です。
+数量限定のため、無くなり次第終了となります。
+ぜひ、お早めにご賞味ください。
+            </div>
+        </article>
+
+        <article class="news-article">
+            <div class="news-meta">
+                <span class="news-date">2026.01.20</span>
+                <span class="news-cat">営業案内</span>
+            </div>
+            <h3 class="news-title-full">店舗メンテナンスに伴う休業のお知らせ</h3>
+            <div class="news-body">
+誠に勝手ながら、以下の日程を設備メンテナンスのため臨時休業とさせていただきます。
+
+【休業日】
+2026年2月3日（火） 〜 2月4日（水）
+
+お客様にはご不便をおかけいたしますが、何卒ご理解のほどよろしくお願い申し上げます。
+2月5日（木）より通常通り営業いたします。
+            </div>
+        </article>
+
+        <article class="news-article">
+            <div class="news-meta">
+                <span class="news-date">2025.12.30</span>
+                <span class="news-cat">その他</span>
+            </div>
+            <h3 class="news-title-full">年末年始の営業時間について</h3>
+            <div class="news-body">
+年末年始の営業時間は以下の通りとなります。
+
+12月30日：通常営業
+12月31日：15:00 〜 22:00
+1月1日 〜 1月3日：お休み
+1月4日：通常営業
+
+本年も格別のご愛顧を賜り、厚く御礼申し上げます。
+来年も変わらぬお引き立てのほど、よろしくお願いいたします。
+            </div>
+        </article>
+
     </div>
 
     <script src="script.js"></script>
