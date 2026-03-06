@@ -425,3 +425,72 @@ a:hover {
     margin-top: 15px;
     border-radius: 4px;
 }
+
+/* --- index.html用 追加修正（動画・QRリンク） --- */
+
+/* 動画セクション */
+.movie-section {
+    padding: 100px 20px;
+    background-color: var(--bg-beige);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.section-desc {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 40px;
+    font-family: sans-serif;
+}
+
+.movie-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* YouTubeをスマホでも見やすくする（レスポンシブ対応） */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9のアスペクト比 */
+    height: 0;
+    background-color: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* QRコードのリンク化 */
+.qr-link {
+    display: inline-block;
+    transition: 0.3s;
+    position: relative;
+}
+
+.qr-link:hover {
+    opacity: 0.8;
+    transform: scale(1.02); /* マウスが乗ると少し拡大 */
+}
+
+/* 「Click to Access」という文字を小さく出す（任意） */
+.click-hint {
+    display: block;
+    color: #fff;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    font-family: sans-serif;
+    opacity: 0.6;
+    letter-spacing: 0.1em;
+}
