@@ -494,3 +494,18 @@ a:hover {
     opacity: 0.6;
     letter-spacing: 0.1em;
 }
+
+/* --- Award（評価バッジ）セクション --- */
+.award-section {
+    padding: 60px 20px;
+    background-color: var(--bg-beige);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.award-inner {
+    /* バッジが他の要素と近づきすぎないように余白を調整 */
+    margin: 0 auto;
+}
