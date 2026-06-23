@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# 旧バージョンのディレクトリはインデックス除外
+Disallow: /sake-site/
+
+Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
